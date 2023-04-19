@@ -1,0 +1,21 @@
+.recipe {
+    padding: 20px;
+    border: 2px solid #94999e;
+    background: transparent;
+    border-radius: 5px;
+    color: #0d1117;
+    background-color: #c9d1d9;
+    cursor: pointer;
+}
+
+.recipe + .recipe {
+    margin-top: 20px;
+}
+
+.recipe:hover {
+    background-color: #45474a;
+}
+
+.image {
+    height: 150px;
+}

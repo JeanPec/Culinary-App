@@ -1,31 +1,40 @@
 main {
-    text-align: center;
-    background-color: #35383d;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+  text-align: center;
+  background-color: #35383d;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
 h1 {
-    font-size: xx-large;
+  font-size: xx-large;
 }
 
 h3 {
-    font-size: small;
+  font-size: small;
 }
 
 .content {
+  background-color: #282c34;
+  padding: 20px;
+  border: 5px solid #1a1d22;
+  border-radius: 10px;
+  margin-bottom: 50px;
+}
+
+.results {
     background-color: #282c34;
     padding: 20px;
     border: 5px solid #1a1d22;
     border-radius: 10px;
-}
-
-  .searchBar {
-    width: 60%;
+    height: 50vh;
+    overflow: auto;
   }
-  
+
+.searchBar {
+  width: 60%;
+}

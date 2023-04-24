@@ -1,5 +1,5 @@
 input {
-    border: 2px solid #c9d1d9;
+    border: 2px solid var(--color-scale-gray-4);
     height: 40px;
     font-size: large;
   }

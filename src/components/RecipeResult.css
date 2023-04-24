@@ -1,10 +1,9 @@
 .recipe {
     padding: 20px;
-    border: 2px solid #94999e;
+    border: 2px solid var(--color-scale-gray-4);
     background: transparent;
     border-radius: 5px;
-    color: #0d1117;
-    background-color: #c9d1d9;
+    background-color: var(--color-scale-gray-9);
     cursor: pointer;
 }
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FlexContainer, RecipeResult } from "../components";
+import { Border, FlexContainer, RecipeResult } from "../components";
 import { useFetch, getData } from "../hooks";
 import { Button, SearchBar } from "../ui";
 
@@ -36,36 +36,38 @@ export const SearchPage = () => {
   //const funFact = (data as unknown as { text: string }).text;
 
   return (
-    <main>
-      <div className="content">
-        <h1>
-          Looking for an idea ? <br />
-          Type in your ingredients to get an awesome Recipe !
-        </h1>
-        {/*<h3>Fun Fact to get you started: {loadingFact ? 'loading...' : funFact}</h3>*/}
-        <FlexContainer justify="center">
-          <SearchBar
-            className="searchBar"
-            onSearch={setSearch}
-            placeHolder={"Apple,Cheese,flour"}
-          />
-          <Button
-            onClick={() => {
-              getData({
-                endpoint: "recipes/complexSearch",
-                query: { query: search },
-              }).then((response) => console.log(response?.data));
-            }}
-          >
-            Search
-          </Button>
-        </FlexContainer>
-      </div>
-      <div className="results">
-        {results.map(({ id, title, image }) => (
-          <RecipeResult id={id} title={title} image={image} />
-        ))}
-      </div>
-    </main>
+      <main>
+        <Border>
+          <h1>
+            Looking for an idea ? <br />
+            Type in your ingredients to get an awesome Recipe !
+          </h1>
+          {/*<h3>Fun Fact to get you started: {loadingFact ? 'loading...' : funFact}</h3>*/}
+          <FlexContainer justify="center">
+            <SearchBar
+              className="searchBar"
+              onSearch={setSearch}
+              placeHolder={"Apple,Cheese,flour"}
+            />
+            <Button
+              onClick={() => {
+                getData({
+                  endpoint: "recipes/complexSearch",
+                  query: { query: search },
+                }).then((response) => {
+                  if (response) setResults(response as unknown as RecipeType[]);
+                });
+              }}
+            >
+              Search
+            </Button>
+          </FlexContainer>
+        </Border>
+        <Border className="results">
+          {results.map(({ id, title, image }) => (
+            <RecipeResult id={id} title={title} image={image} />
+          ))}
+        </Border>
+      </main>
   );
 };

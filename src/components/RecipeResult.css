@@ -1,9 +1,9 @@
 .recipe {
     padding: 20px;
-    border: 2px solid var(--color-scale-gray-4);
+    border: 2px solid var(--color-scale-green-2);
     background: transparent;
     border-radius: 5px;
-    background-color: var(--color-scale-gray-9);
+    background-color: var(--color-scale-green-1);
     cursor: pointer;
 }
 
@@ -12,7 +12,7 @@
 }
 
 .recipe:hover {
-    background-color: #45474a;
+    background-color: var(--color-scale-green-3);
 }
 
 .image {

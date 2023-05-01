@@ -1,21 +1,20 @@
 .button {
   border: 0;
-  background: transparent;
   border-radius: 5px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #0d1117; 
-  background-color: #c9d1d9;
+  color: var(--color-scale-beige); 
+  background-color: var(--color-scale-green-4);
   font-size: large;
   font-weight: 700;
   cursor: pointer;
 }
 
-.button:hover {
-  background-color: #45474a;
+.button:disabled {
+  background-color: var(--color-scale-gray) !important;
 }
 
-.active {
-  color: red;
+.button:hover {
+  background-color: var(--color-scale-green-3);
 }

@@ -1,31 +1,29 @@
 :root {
-  --color-scale-black: #010409; 
-  --color-scale-gray-0: #f0f6fc;
-  --color-scale-gray-1: #c9d1d9;
-  --color-scale-gray-2: #b1bac4;
-  --color-scale-gray-3: #8b949e;
-  --color-scale-gray-4: #6e7681;
-  --color-scale-gray-5: #484f58;
-  --color-scale-gray-6: #30363d;
-  --color-scale-gray-7: #21262d;
-  --color-scale-gray-8: #161b22;
-  --color-scale-gray-9: #0d1117;
+  --color-scale-white: #fff; 
+  --color-scale-black: #000; 
+  --color-scale-beige: #F5F5DC; 
+  --color-scale-gray: #C0C0C0; 
+  --color-scale-green-0: #C9FFE5;
+  --color-scale-green-1: #98FB98 ;
+  --color-scale-green-2: #32CD32;
+  --color-scale-green-3: #006400;
+  --color-scale-green-4: #004D00 ;
 }
 
 main {
   text-align: center;
-  min-height: 100vh;
+  height: 100%;
   display: flex;
-  background-color: var(--color-scale-black);
+  background-color: var(--color-scale-white);
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--color-scale-beige);
 }
 
 html {
-  background-color: var(--color-scale-black);
+  background-color: var(--color-scale-white);
 }
 
 a {
@@ -33,5 +31,14 @@ a {
 }
 
 a:-webkit-any-link {
-  color: white;
+  color: var(--color-scale-beige);
+}
+
+h1 {
+  font-size: xx-large;
+}
+
+.label {
+  font-size: x-large;
+  color: #000;
 }

@@ -9,6 +9,7 @@ interface FlexContainerProps extends AllHTMLAttributes<any>{
   gap?: number;
   gutterBottom?: boolean;
   justify?: CSSProperties['justifyContent'];
+  fullWidth?: boolean;
 }
 
 export const FlexContainer = React.forwardRef(
@@ -17,6 +18,7 @@ export const FlexContainer = React.forwardRef(
       align,
       className,
       direction = 'row',
+      fullWidth,
       gap = 8,
       gutterBottom,
       justify,
@@ -29,9 +31,10 @@ export const FlexContainer = React.forwardRef(
         ref={ref}
         className={cn(
           'container',
-          'direction',
           {
+            'column': direction === 'column',
             'gutterBottom': gutterBottom,
+            'fullWidth': fullWidth,
           },
           className,
         )}

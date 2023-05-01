@@ -3,31 +3,28 @@ import cn from 'classnames';
 
 import './Border.css';
 
-interface BorderProps extends AllHTMLAttributes<HTMLDivElement>{
-  small?: boolean;
-  noBackGround?: boolean;
+interface ContainerProps extends AllHTMLAttributes<HTMLDivElement>{
+  header?: boolean;
   gutterBottom?: boolean;
 }
 
-export const Border = React.forwardRef(
+export const Container = React.forwardRef(
   (
     {
       className,
-      small = false,
-      noBackGround,
+      header,
       gutterBottom,
       ...props
-    }: BorderProps,
+    }: ContainerProps,
     ref?: React.LegacyRef<HTMLDivElement> | undefined,
   ) => (
       <div
         ref={ref}
         className={cn(
-          'border',
+          'container',
           {
             'gutterBottom': gutterBottom,
-            'noBackGround': noBackGround,
-            'small': small
+            'header': header,
           },
           className,
         )}

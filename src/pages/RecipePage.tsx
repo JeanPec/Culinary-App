@@ -1,72 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { Outlet, Route, Routes, useParams } from "react-router-dom";
 import { useFetch } from "../hooks";
 import { Loading } from "../splash/Loading";
-import DOMPurify from "dompurify";
 
 import "./RecipePage.css";
-import { Border, FlexContainer } from "../components";
-import { RecipeCategories } from "../utils";
+import { Container, FlexContainer } from "../components";
+import { RecipeCategories, RecipeType } from "../utils";
 import { NavLinkButton } from "../components/NavLinkButton";
-
-type ExtendedIngredients = {
-  amount: number;
-  aisle: string;
-  id: number;
-  image: string;
-  name: string;
-  measures: {
-    metric: {
-      amount: number;
-      unitLong: string;
-      unitShort: string;
-    };
-    us: {
-      amount: number;
-      unitLong: string;
-      unitShort: string;
-    };
-  };
-};
-
-type Wine = {
-  id: number;
-  title: string;
-  description: string;
-  price: string;
-  imageUrl: string;
-  averageRating: number;
-  ratingCount: number;
-  score: number;
-  link: string;
-};
-
-type WinePairing = {
-  winePairing: {
-    pairedWines: string[];
-    pairingText: string;
-    productMatches: Wine[];
-  };
-};
-
-type RecipeType = {
-  id: number;
-  title: string;
-  image: string;
-  servings: number;
-  readyInMinutes: number;
-  sourceName: string;
-  sourceUrl: string;
-  spoonacularScore: number;
-  cheap: boolean;
-  dairyFree: boolean;
-  cuisines: string[];
-  glutenFree: boolean;
-  vegan: boolean;
-  extendedIngredients: ExtendedIngredients[];
-  summary: string;
-  winePairing: WinePairing;
-};
+import { SummaryPage } from "./SummaryPage";
+import { IngredientsListPage } from "./IngredientsListPage";
 
 export const RecipePage = () => {
   const { id } = useParams();
@@ -75,12 +17,8 @@ export const RecipePage = () => {
   });
 
   const recipeInformation = data as unknown as RecipeType;
-  console.log(recipeInformation);
 
-  if (true) return <Loading />;
-
-  // Sanitize the HTML content
-  const sanitizedHtmlContent = DOMPurify.sanitize(recipeInformation.summary);
+  if (loadingRecipe) return <Loading />;
 
   return (
     <Routes>
@@ -88,30 +26,36 @@ export const RecipePage = () => {
         path="/"
         element={
           <main>
-            <Border>
+            <Container header gutterBottom>
+              <FlexContainer align='center'>
               <h1>{recipeInformation.title}</h1>
-            </Border>
-            <Border>
+              <NavLinkButton title="Go Back to Search"/>
+              </FlexContainer>
+              
+            </Container>
+            <FlexContainer align={'center'} gap={10} gutterBottom>
               <img
-                className="RecipeImage"
+                className="recipeImage"
                 src={recipeInformation.image}
                 alt={`${recipeInformation.title} recipe`}
               />
-            </Border>
-            <Border>
-              <FlexContainer>
+              <FlexContainer direction="column">
                 {Object.values(RecipeCategories).map((value) => (
-                  <NavLinkButton title={value} />
+                  <NavLinkButton className="navLinkRecipe" title={value} />
                 ))}
               </FlexContainer>
-            </Border>
+            </FlexContainer>
             <Outlet />
           </main>
         }
       >
-        <Route path="ingredients" element={<>Ingredients</>} />
+        <Route
+          path="summary"
+          element={<SummaryPage summaryContent={recipeInformation.summary} />}
+        />
+        <Route path="ingredientsList" element={<IngredientsListPage ingredientsList={recipeInformation.extendedIngredients} />} />
+        <Route path="IngredientsSteps" element={<>Ingredients</>} />
         <Route path="wines" element={<>Wines</>} />
-        <Route path="summary" element={<>Summary</>} />
       </Route>
     </Routes>
   );

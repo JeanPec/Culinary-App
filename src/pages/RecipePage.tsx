@@ -9,6 +9,7 @@ import { RecipeCategories, RecipeType } from "../utils";
 import { NavLinkButton } from "../components/NavLinkButton";
 import { SummaryPage } from "./SummaryPage";
 import { IngredientsListPage } from "./IngredientsListPage";
+import { IngredientsStepPage } from "./IngredientsStepPage";
 
 export const RecipePage = () => {
   const { id } = useParams();
@@ -19,6 +20,8 @@ export const RecipePage = () => {
   const recipeInformation = data as unknown as RecipeType;
 
   if (loadingRecipe) return <Loading />;
+
+  const navOptions = !!recipeInformation.instructions ? Object.values(RecipeCategories) : Object.values(RecipeCategories).filter((element) => element !== RecipeCategories.IngredientsList);
 
   return (
     <Routes>
@@ -40,7 +43,7 @@ export const RecipePage = () => {
                 alt={`${recipeInformation.title} recipe`}
               />
               <FlexContainer direction="column">
-                {Object.values(RecipeCategories).map((value) => (
+                {navOptions.map((value) => (
                   <NavLinkButton className="navLinkRecipe" title={value} />
                 ))}
               </FlexContainer>
@@ -54,7 +57,7 @@ export const RecipePage = () => {
           element={<SummaryPage summaryContent={recipeInformation.summary} />}
         />
         <Route path="ingredientsList" element={<IngredientsListPage ingredientsList={recipeInformation.extendedIngredients} />} />
-        <Route path="IngredientsSteps" element={<>Ingredients</>} />
+        <Route path="IngredientsSteps" element={<IngredientsStepPage />} />
         <Route path="wines" element={<>Wines</>} />
       </Route>
     </Routes>

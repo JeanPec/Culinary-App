@@ -63,6 +63,7 @@ export type RecipeType = {
   spoonacularScore: number;
   cheap: boolean;
   dairyFree: boolean;
+  instructions?: string;
   cuisines: string[];
   glutenFree: boolean;
   vegan: boolean;

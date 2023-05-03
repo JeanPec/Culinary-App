@@ -1,36 +1,26 @@
-import React, { useState } from "react";
-import {
-  CounterInput,
-  FlexContainer,
-  IngredientContainer,
-  StateButton,
-} from "../components";
-import { round } from "../utils";
+import React from "react";
 
-import "./SummaryPage.css";
-import { Loading } from "../splash/Loading";
-import { useFetch } from "../hooks";
+import "./IngredientsStepPage.css";
 
 interface IngredientsStepPageProps {
   recipeInstructions?: string;
 }
 
 export const IngredientsStepPage = ({
-    recipeInstructions,
+  recipeInstructions,
 }: IngredientsStepPageProps) => {
-  const { data, loading: loadingRecipe } = useFetch({
-    endpoint: `recipes/${recipeInstructions}/analyze`,
-  });
-
-  if(!recipeInstructions) return <>error</>
-
-  if(loadingRecipe) return <Loading />;
-
-  console.log(data)
+  const data = recipeInstructions?.split(".").filter((value) => value !== "");
 
   return (
-    <>
-      test
-    </>
+    <ol className={"ingredientSteps"} style={{ "--length": data?.length}  as React.CSSProperties}>
+      {data?.map((value, index) => (
+        <li
+          className={"ingredientStep"}
+          style={{ "--i": index+1} as React.CSSProperties}
+        >
+            <span className="ingredientStepContent">{value.charAt(0).toUpperCase() + value.slice(1)}</span>
+        </li>
+      ))}
+    </ol>
   );
 };

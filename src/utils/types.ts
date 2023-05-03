@@ -9,7 +9,7 @@ export enum RecipeCategories {
   Summary = "Summary",
   IngredientsList = "List of Ingredients",
   IngredientsSteps = "Ingredients Steps",
-  Wine = "Wine Suggestions",
+  Wine = "Wine Pairing",
 }
 
 export type ExtendedIngredients = {
@@ -45,11 +45,9 @@ export type Wine = {
 };
 
 export type WinePairing = {
-  winePairing: {
-    pairedWines: string[];
-    pairingText: string;
-    productMatches: Wine[];
-  };
+  pairedWines: string[];
+  pairingText: string;
+  productMatches: Wine[];
 };
 
 export type RecipeType = {
@@ -70,4 +68,13 @@ export type RecipeType = {
   extendedIngredients: ExtendedIngredients[];
   summary: string;
   winePairing: WinePairing;
+};
+
+export type RecipeInstruction = {
+  number: number;
+  step: string;
+};
+
+export type RecipeInstructions = {
+  steps: RecipeInstruction[];
 };

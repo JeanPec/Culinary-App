@@ -4,4 +4,4 @@
  */
 
 export const DEBOUNCE_WAIT_TIME = 200;
-export const NUMBER_RECIPES = 2;
+export const NUMBER_RECIPES = 10;

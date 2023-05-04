@@ -1,9 +1,17 @@
+.resultMain {
+  width: 80vw;
+}
+
 h3 {
-  font-size: small;
+  font-size: medium;
+}
+
+.titleSearch {
+  margin: auto;
 }
 
 .results {
-    height: 50vh;
+    height: 60vh;
     overflow: auto;
   }
 

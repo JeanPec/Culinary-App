@@ -78,3 +78,17 @@ export type RecipeInstruction = {
 export type RecipeInstructions = {
   steps: RecipeInstruction[];
 };
+
+export type RecipeSearchType = {
+  id: number;
+  title: string;
+  image: string;
+  imageType: string;
+};
+
+export type DataSearchType = {
+  data: {
+    number: number;
+    results: RecipeSearchType[];
+  }
+}

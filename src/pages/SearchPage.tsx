@@ -1,73 +1,65 @@
-import React, { useState } from "react";
-import { Border, FlexContainer, RecipeResult } from "../components";
+import React, { useCallback, useState } from "react";
+import { Border, Container, FlexContainer, RecipeResult } from "../components";
 import { useFetch, getData } from "../hooks";
+import { Loading } from "../splash/Loading";
 import { Button, SearchBar } from "../ui";
+import { DataSearchType, RecipeSearchType } from "../utils";
 
 import "./SearchPage.css";
 
-type RecipeType = {
-  id: number;
-  title: string;
-  image: string;
-  imageType: string;
-};
-
 export const SearchPage = () => {
   const [search, setSearch] = useState<string>();
-  const [results, setResults] = useState<RecipeType[]>([
-    {
-      id: 716429,
-      title: "Pasta with Garlic, Scallions, Cauliflower & Breadcrumbs",
-      image: "https://spoonacular.com/recipeImages/716429-312x231.jpg",
-      imageType: "jpg",
-    },
-    {
-      id: 715538,
-      title: "What to make for dinner tonight?? Bruschetta Style Pork & Pasta",
-      image: "https://spoonacular.com/recipeImages/715538-312x231.jpg",
-      imageType: "jpg",
-    },
-  ]);
+  const [results, setResults] = useState<RecipeSearchType[]>([]);
 
-  /*const { data, loading: loadingFact } = useFetch({
+  const { data, loading: loadingFact } = useFetch({
     endpoint: "food/trivia/random",
-  });*/
+  });
 
-  //const funFact = (data as unknown as { text: string }).text;
+  const handleSearch = useCallback(() => {
+    getData({
+      endpoint: "recipes/complexSearch",
+      query: { query: search },
+    }).then((response) => {
+      const result = (response as unknown as DataSearchType).data.results;
+      if (result) setResults(result);
+    });
+  }, [search]);
+
+  const funFact = (data as unknown as { text: string }).text;
+
+  if (loadingFact) return <Loading />;
 
   return (
-      <main>
-        <Border>
-          <h1>
-            Looking for an idea ? <br />
-            Type in your ingredients to get an awesome Recipe !
-          </h1>
-          {/*<h3>Fun Fact to get you started: {loadingFact ? 'loading...' : funFact}</h3>*/}
+    <main>
+      <Container header gutterBottom>
+        <h1 className="titleSearch">
+          Looking for an idea ? <br />
+          Type in your ingredients to get an awesome Recipe !
+        </h1>
+      </Container>
+      <FlexContainer direction="column" className="resultMain">
+        <Border gutterBottom>
+          <h3>
+            Fun Fact to get you started: {loadingFact ? "loading..." : funFact}
+          </h3>
           <FlexContainer justify="center">
             <SearchBar
               className="searchBar"
-              onSearch={setSearch}
+              onValueChanged={setSearch}
+              onSearch={handleSearch}
               placeHolder={"Apple,Cheese,flour"}
             />
-            <Button
-              onClick={() => {
-                getData({
-                  endpoint: "recipes/complexSearch",
-                  query: { query: search },
-                }).then((response) => {
-                  if (response) setResults(response as unknown as RecipeType[]);
-                });
-              }}
-            >
-              Search
-            </Button>
+            <Button onClick={() => handleSearch()}>Search</Button>
           </FlexContainer>
         </Border>
-        <Border className="results">
-          {results.map(({ id, title, image }) => (
-            <RecipeResult id={id} title={title} image={image} />
-          ))}
-        </Border>
-      </main>
+        {results.length > 0 && (
+          <Border className="results">
+            {results.map(({ id, title, image }) => (
+              <RecipeResult id={id} title={title} image={image} />
+            ))}
+          </Border>
+        )}
+      </FlexContainer>
+    </main>
   );
 };

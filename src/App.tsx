@@ -12,7 +12,7 @@ import { AboutMePage } from "./aboutMe";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/Culinary-App">
       <Routes>
         <Route
           path="/"

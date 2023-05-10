@@ -7,7 +7,6 @@ import "./SwitchLinkButton.css";
 
 export const SwitchLinkButton = () => {
   const location = useLocation();
-  console.log(location);
   const isAboutMe = location.pathname.includes("aboutMe");
   const route = isAboutMe ? "/search" : "/aboutMe/summary";
   const image = isAboutMe ? (

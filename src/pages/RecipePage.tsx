@@ -23,15 +23,23 @@ export const RecipePage = () => {
   const navOptions = useMemo(
     () =>
       Object.values(RecipeCategories).filter((element) => {
-        if (!recipeInformation.instructions && !recipeInformation.winePairing) {
+        if (
+          !recipeInformation.instructions &&
+          !recipeInformation.winePairing?.pairingText
+        ) {
           if (element === RecipeCategories.IngredientsSteps) return false;
           if (element === RecipeCategories.Wine) return false;
         }
         if (!recipeInformation.instructions) {
           if (element === RecipeCategories.IngredientsSteps) return false;
         }
-        if (!recipeInformation.winePairing.pairingText) {
+        if (!recipeInformation.winePairing) {
           if (element === RecipeCategories.Wine) return false;
+        }
+        if (recipeInformation.winePairing) {
+          if (recipeInformation.winePairing.pairingText === "") {
+            if (element === RecipeCategories.Wine) return false;
+          }
         }
         return true;
       }),

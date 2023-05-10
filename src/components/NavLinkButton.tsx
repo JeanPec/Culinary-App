@@ -37,19 +37,21 @@ export const NavLinkButton = ({ title, className }: RecipeResultProps) => {
       route = "wines";
       image = <FontAwesomeIcon icon={faWineBottle} />;
       break;
-    case 'Go Back to Search':
+    case "Go Back to Search":
       route = "/..";
       image = <FontAwesomeIcon icon={faArrowLeft} />;
       break;
     default:
-      route = "/..";
+      route = "/search";
       image = <FontAwesomeIcon icon={faArrowLeft} />;
       break;
   }
 
   return (
     <NavLink className={"navLink"} to={route}>
-      <Button className={className} iconBefore={image}>{title}</Button>
+      <Button className={className} iconBefore={image}>
+        {title}
+      </Button>
     </NavLink>
   );
 };

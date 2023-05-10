@@ -19,14 +19,29 @@ export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
 
 export const Button = React.forwardRef(
   (
-    { seeMore, className, disabled, disableStyle, iconAfter, iconBefore, children, ...props }: ButtonProps,
+    {
+      seeMore,
+      className,
+      disabled,
+      disableStyle,
+      iconAfter,
+      iconBefore,
+      children,
+      ...props
+    }: ButtonProps,
     ref: React.ForwardedRef<HTMLButtonElement>
   ) => (
-    <button type="button" disabled={disabled} className={cn(className, {"button" : !disableStyle})} ref={ref} {...props}>
-      <FlexContainer align={'center'}>
-      {!!iconBefore && iconBefore}
-      {children}
-      {!!iconAfter && iconAfter}
+    <button
+      type="button"
+      disabled={disabled}
+      className={cn(className, { button: !disableStyle })}
+      ref={ref}
+      {...props}
+    >
+      <FlexContainer align={"center"}>
+        {!!iconBefore && iconBefore}
+        {children}
+        {!!iconAfter && iconAfter}
       </FlexContainer>
     </button>
   )

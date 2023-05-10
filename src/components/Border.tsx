@@ -1,9 +1,9 @@
-import React, { AllHTMLAttributes } from 'react';
-import cn from 'classnames';
+import React, { AllHTMLAttributes } from "react";
+import cn from "classnames";
 
-import './Border.css';
+import "./Border.css";
 
-interface BorderProps extends AllHTMLAttributes<HTMLDivElement>{
+interface BorderProps extends AllHTMLAttributes<HTMLDivElement> {
   small?: boolean;
   noBackGround?: boolean;
   gutterBottom?: boolean;
@@ -18,20 +18,20 @@ export const Border = React.forwardRef(
       gutterBottom,
       ...props
     }: BorderProps,
-    ref?: React.LegacyRef<HTMLDivElement> | undefined,
+    ref?: React.LegacyRef<HTMLDivElement> | undefined
   ) => (
-      <div
-        ref={ref}
-        className={cn(
-          'border',
-          {
-            'gutterBottom': gutterBottom,
-            'noBackGround': noBackGround,
-            'small': small
-          },
-          className,
-        )}
-        {...props}
-      />
-    )
+    <div
+      ref={ref}
+      className={cn(
+        "border",
+        {
+          gutterBottom: gutterBottom,
+          noBackGround: noBackGround,
+          small: small,
+        },
+        className
+      )}
+      {...props}
+    />
+  )
 );

@@ -53,11 +53,11 @@ export const SearchPage = () => {
           </FlexContainer>
         </Border>
         {results.length > 0 && (
-          <Border className="results">
+          <div className="results">
             {results.map(({ id, title, image }) => (
               <RecipeResult id={id} title={title} image={image} />
             ))}
-          </Border>
+          </div>
         )}
       </FlexContainer>
     </main>

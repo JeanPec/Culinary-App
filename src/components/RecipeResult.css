@@ -1,23 +1,23 @@
 .recipe {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .recipe a {
-    color: var(--color-scale-black);
+  color: var(--color-scale-black);
 }
 
 .recipe + .recipe {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .recipe:hover {
-    background-color: var(--color-scale-green-3);
+  background-color: var(--color-scale-green-3);
 }
 
 .recipe:hover a {
-    color: var(--color-scale-beige);
+  color: var(--color-scale-beige);
 }
 
 .image {
-    height: 150px;
+  height: 150px;
 }

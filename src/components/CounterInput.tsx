@@ -22,8 +22,12 @@ export const CounterInput = React.forwardRef(
     };
 
     return (
-      <FlexContainer direction={"column"} justify='center'>
-        {!!label && <label className='label' htmlFor="counterInput">{label}</label>}
+      <FlexContainer direction={"column"} justify="center">
+        {!!label && (
+          <label className="label" htmlFor="counterInput">
+            {label}
+          </label>
+        )}
         <FlexContainer align="center">
           <Button
             iconAfter={<FontAwesomeIcon icon={faMinus} />}

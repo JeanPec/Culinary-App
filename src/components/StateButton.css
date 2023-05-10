@@ -1,25 +1,25 @@
 .stateButton {
-    border: 1px solid var(--color-scale-green-3);
-    border-radius: 30px;
-    display:inline-flex;
-    overflow: hidden;
-    height: fit-content;
+  border: 1px solid var(--color-scale-green-3);
+  border-radius: 30px;
+  display: inline-flex;
+  overflow: hidden;
+  height: fit-content;
 }
 
 .horizontalDivider {
-    border: 5px solid var(--color-scale-green-3);
+  border: 5px solid var(--color-scale-green-3);
 }
 
 .stateOption {
-    border: 0;
-    min-width: 60px;
-    font-size: large;
-    color: var(--color-scale-beige);
-    background-color: var(--color-scale-green-3);
+  border: 0;
+  min-width: 60px;
+  font-size: large;
+  color: var(--color-scale-beige);
+  background-color: var(--color-scale-green-3);
 }
 
 .activeState {
-    color: var(--color-scale-black);
-    background-color: var(--color-scale-green-1);
-    font-weight: 700;
+  color: var(--color-scale-black);
+  background-color: var(--color-scale-green-1);
+  font-weight: 700;
 }

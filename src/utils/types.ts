@@ -90,5 +90,5 @@ export type DataSearchType = {
   data: {
     number: number;
     results: RecipeSearchType[];
-  }
-}
+  };
+};

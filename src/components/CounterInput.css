@@ -1,12 +1,12 @@
 .numberInput {
-    border: 5px solid var(--color-scale-green-4);
-    border-radius: 10px;
-    color: var(--color-scale-black); 
-    font-size: large;
-    font-weight: 700;
-    cursor: pointer;
-    width: 100px;
-    margin: 0;
+  border: 5px solid var(--color-scale-green-4);
+  border-radius: 10px;
+  color: var(--color-scale-black);
+  font-size: large;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100px;
+  margin: 0;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -17,6 +17,6 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }

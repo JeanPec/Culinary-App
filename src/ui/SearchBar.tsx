@@ -20,14 +20,15 @@ export const SearchBar = React.forwardRef(
     { search, onValueChanged, onSearch, placeHolder, ...props }: SearchBarProps,
     ref: React.ForwardedRef<HTMLInputElement>
   ) => {
-    const handleChange = (e: ChangeEvent<HTMLInputElement>) => onValueChanged(e.currentTarget.value);
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) =>
+      onValueChanged(e.currentTarget.value);
     return (
       <input
         ref={ref}
         placeholder={placeHolder || "Search..."}
         onChange={handleChange}
-        onKeyDown={(event)=>{
-          if(event.code==='Enter') onSearch();
+        onKeyDown={(event) => {
+          if (event.code === "Enter") onSearch();
         }}
         {...props}
       />

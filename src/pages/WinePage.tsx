@@ -9,6 +9,8 @@ interface WinePageProps {
 
 export const WinePage = ({ summaryContent }: WinePageProps) => {
   return (
-    <Border><p className="summary">{summaryContent}</p></Border>
+    <Border>
+      <p className="summary">{summaryContent}</p>
+    </Border>
   );
 };

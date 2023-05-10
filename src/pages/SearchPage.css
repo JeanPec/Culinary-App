@@ -11,9 +11,9 @@ h3 {
 }
 
 .results {
-    height: 60vh;
-    overflow: auto;
-  }
+  height: 60vh;
+  overflow: auto;
+}
 
 .searchBar {
   width: 60%;

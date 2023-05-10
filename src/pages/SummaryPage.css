@@ -1,15 +1,15 @@
 .summary {
-    font-size: large;
-    text-align: justify;
-    width: 80vw;
-    padding: 0 30px;
+  font-size: large;
+  text-align: justify;
+  width: 80vw;
+  padding: 0 30px;
 }
 
 .summary a {
-    color: var(--color-scale-beige);
+  color: var(--color-scale-beige);
 }
 
 .summary a:hover {
-    color: blue;
-    text-decoration:underline;
+  color: blue;
+  text-decoration: underline;
 }

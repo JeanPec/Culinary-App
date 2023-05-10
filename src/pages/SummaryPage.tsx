@@ -12,6 +12,11 @@ export const SummaryPage = ({ summaryContent }: SummaryPageProps) => {
   // Sanitize the HTML content
   const sanitizedHtmlContent = DOMPurify.sanitize(summaryContent);
   return (
-    <Border><p className="summary" dangerouslySetInnerHTML={{__html: sanitizedHtmlContent}}/></Border>
+    <Border>
+      <p
+        className="summary"
+        dangerouslySetInnerHTML={{ __html: sanitizedHtmlContent }}
+      />
+    </Border>
   );
 };

@@ -20,19 +20,23 @@ export const RecipePage = () => {
 
   const recipeInformation = data as unknown as RecipeType;
 
-  const navOptions = useMemo(()=>Object.values(RecipeCategories).filter((element) => {
-    if (!recipeInformation.instructions && !recipeInformation.winePairing) {
-      if (element === RecipeCategories.IngredientsSteps) return false;
-      if (element === RecipeCategories.Wine) return false;
-    }
-    if (!recipeInformation.instructions) {
-      if (element === RecipeCategories.IngredientsSteps) return false;
-    }
-    if (!recipeInformation.winePairing) {
-      if (element === RecipeCategories.Wine) return false;
-    }
-    return true;
-  }), [recipeInformation]);
+  const navOptions = useMemo(
+    () =>
+      Object.values(RecipeCategories).filter((element) => {
+        if (!recipeInformation.instructions && !recipeInformation.winePairing) {
+          if (element === RecipeCategories.IngredientsSteps) return false;
+          if (element === RecipeCategories.Wine) return false;
+        }
+        if (!recipeInformation.instructions) {
+          if (element === RecipeCategories.IngredientsSteps) return false;
+        }
+        if (!recipeInformation.winePairing.pairingText) {
+          if (element === RecipeCategories.Wine) return false;
+        }
+        return true;
+      }),
+    [recipeInformation]
+  );
 
   if (loadingRecipe) return <Loading />;
 
@@ -92,12 +96,7 @@ export const RecipePage = () => {
             />
           }
         />
-                <Route
-          index
-          element={
-            <Navigate to="summary" />
-          }
-        />
+        <Route index element={<Navigate to="summary" />} />
       </Route>
     </Routes>
   );

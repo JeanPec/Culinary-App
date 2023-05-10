@@ -31,7 +31,11 @@ export const IngredientsListPage = ({
           state={isMetric}
           setState={setIsMetric}
         />
-        <CounterInput label='Servings' value={portion} onInputChanged={setPortion} />
+        <CounterInput
+          label="Servings"
+          value={portion}
+          onInputChanged={setPortion}
+        />
       </FlexContainer>
       <ol>
         {ingredientsList.map((ingredient) => {

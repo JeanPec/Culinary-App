@@ -18,11 +18,7 @@ export const IngredientContainer = ({
 }: IngredientContainerProps) => {
   return (
     <Border noBackGround gutterBottom>
-      <DropDown
-        overlay={
-          <span>Available in aisle {aisle}</span>
-        }
-      >
+      <DropDown overlay={<span>Available in aisle {aisle}</span>}>
         <li className="listItem">
           <img
             className="imageRecipe"
@@ -30,7 +26,7 @@ export const IngredientContainer = ({
             alt={`${name} ingredient`}
           />
           <span>{name}</span>
-          <span className={'recipeMeasure'}>{measure}</span>
+          <span className={"recipeMeasure"}>{measure}</span>
         </li>
       </DropDown>
     </Border>

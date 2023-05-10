@@ -30,17 +30,17 @@ export const StateButton = ({
         {optionTrue}
       </Button>
       <div className="horizontalDivider" />
-        <Button
-          disableStyle
-          className={cn("stateOption", {
-            activeState: !state,
-          })}
-          onClick={() => {
-            if (state) setState(false);
-          }}
-        >
-          {optionFalse}
-        </Button>
+      <Button
+        disableStyle
+        className={cn("stateOption", {
+          activeState: !state,
+        })}
+        onClick={() => {
+          if (state) setState(false);
+        }}
+      >
+        {optionFalse}
+      </Button>
     </div>
   );
 };

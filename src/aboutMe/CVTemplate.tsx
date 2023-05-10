@@ -5,26 +5,9 @@ import React from "react";
 
 import ProfileIcon from "../assets/profile.jpg";
 import { Button } from "../ui";
+import { Link } from "react-router-dom";
 
-const CV_FILE_URL = "/assets/CV_Sylvain_Derory_Online.pdf";
-
-export const CVTemplate = () => {
-  const downloadCSV = () => {
-    const url = window.location.origin + CV_FILE_URL;
-    fetch(url)
-      .then((response) => response.blob())
-      .then((blob) => {
-        const blobURL = window.URL.createObjectURL(new Blob([blob]));
-        const fileName = url.split("/").pop();
-        const aTag = document.createElement("a");
-        aTag.href = blobURL;
-        aTag.setAttribute("download", fileName || "");
-        document.body.appendChild(aTag);
-        aTag.click();
-        aTag.remove();
-      });
-  };
-  return (
+export const CVTemplate = () => (
     <div className="resume">
       <div className="resume_left">
         <div className="resume_profile">
@@ -100,9 +83,11 @@ export const CVTemplate = () => {
         <div className="resume_item resume_work">
           <div className="title">
             <p className="bold">Work Experience</p>
-            <Button className="downloadButton" onClick={() => downloadCSV()}>
-              Download Resume
-            </Button>
+            <Link to={"/files/CV_Sylvain_Derory_Online.pdf"} target="_blank" download>
+              <Button className="downloadButton">
+                Download Resume
+              </Button>
+            </Link>
           </div>
           <ul>
             <li>
@@ -273,4 +258,3 @@ export const CVTemplate = () => {
       </div>
     </div>
   );
-};

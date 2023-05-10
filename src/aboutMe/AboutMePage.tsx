@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigate, Outlet, Route, Routes } from "react-router-dom";
+import { Outlet, Route, Routes } from "react-router-dom";
 import { Border, Container } from "../components";
 
 import "./AboutMe.css";

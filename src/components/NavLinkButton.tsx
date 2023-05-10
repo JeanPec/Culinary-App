@@ -38,7 +38,7 @@ export const NavLinkButton = ({ title, className }: RecipeResultProps) => {
       image = <FontAwesomeIcon icon={faWineBottle} />;
       break;
     case "Go Back to Search":
-      route = "/..";
+      route = "/search";
       image = <FontAwesomeIcon icon={faArrowLeft} />;
       break;
     default:

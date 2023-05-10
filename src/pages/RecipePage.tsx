@@ -20,6 +20,9 @@ export const RecipePage = () => {
 
   const recipeInformation = data as unknown as RecipeType;
 
+  console.log(id);
+  console.log(recipeInformation);
+
   const navOptions = useMemo(
     () =>
       Object.values(RecipeCategories).filter((element) => {

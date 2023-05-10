@@ -2,4 +2,11 @@
   position: fixed;
   bottom: 0;
   right: 0;
+  border-radius: 0px;
+  border-top-left-radius: 5px;
+}
+
+.switchLink > .button {
+  border-radius: 0px;
+  border-top-left-radius: 5px;
 }

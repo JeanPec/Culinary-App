@@ -47,6 +47,8 @@ export const NavLinkButton = ({ title, className }: RecipeResultProps) => {
       break;
   }
 
+  console.log(route)
+
   return (
     <NavLink className={"navLink"} to={route}>
       <Button className={className} iconBefore={image}>

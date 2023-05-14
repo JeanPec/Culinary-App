@@ -1,29 +1,29 @@
 import React from "react";
+import { AnalizedInstructions } from "../utils";
 
 import styles from "./IngredientsStepPage.module.css";
 
 interface IngredientsStepPageProps {
-  recipeInstructions?: string;
+  recipeInstructions?: AnalizedInstructions[];
 }
 
 export const IngredientsStepPage = ({
   recipeInstructions,
 }: IngredientsStepPageProps) => {
-  const data = recipeInstructions?.split(".").filter((value) => value !== "");
+  if (!recipeInstructions) return null;
+  const steps = recipeInstructions[0].steps;
 
   return (
     <ol
       className={styles.ingredientSteps}
-      style={{ "--length": data?.length } as React.CSSProperties}
+      style={{ "--length": steps.length } as React.CSSProperties}
     >
-      {data?.map((value, index) => (
+      {steps?.map((step) => (
         <li
           className={styles.ingredientStep}
-          style={{ "--i": index + 1 } as React.CSSProperties}
+          style={{ "--i": step.number } as React.CSSProperties}
         >
-          <span className={styles.ingredientStepContent}>
-            {value.charAt(0).toUpperCase() + value.slice(1)}
-          </span>
+          <span className={styles.ingredientStepContent}>{step.step}</span>
         </li>
       ))}
     </ol>

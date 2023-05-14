@@ -18,7 +18,9 @@ export const SwitchLinkButton = () => {
 
   return (
     <Link className={styles.switchLink} to={route}>
-      <Button className={styles.button} iconBefore={image}>{title}</Button>
+      <Button className={styles.button} iconBefore={image}>
+        {title}
+      </Button>
     </Link>
   );
 };

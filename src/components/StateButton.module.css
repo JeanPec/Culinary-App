@@ -13,7 +13,7 @@
 .stateOption {
   border: 0;
   min-width: 60px;
-  font-size: large;
+  font-size: x-large;
   color: var(--color-scale-beige);
   background-color: var(--color-scale-green-3);
 }

@@ -22,7 +22,7 @@ function App() {
             <>
               <Outlet />
               <SwitchLinkButton />
-              <Toast position={ToastPosition.top}/>
+              <Toast position={ToastPosition.top} />
             </>
           }
         >

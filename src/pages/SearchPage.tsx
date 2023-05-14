@@ -9,7 +9,7 @@ import { DataSearchType, RecipeSearchType } from "../utils";
 import styles from "./SearchPage.module.css";
 
 export const SearchPage = () => {
-  const [search, setSearch] = useState<string>('');
+  const [search, setSearch] = useState<string>("");
   const [results, setResults] = useState<RecipeSearchType[]>([]);
   const { warningMessage, errorMessage } = useToastContext();
 
@@ -22,14 +22,18 @@ export const SearchPage = () => {
     getData({
       endpoint: "recipes/complexSearch",
       query: { query: search },
-    }).then((response) => {
-      const result = (response as unknown as DataSearchType).data.results;
-      if (result) {
-        if(result.length === 0) warningMessage('There are no results for this search please make sure you did not make a typo');
-        setResults(result);
-      };
     })
-    .catch((error)=> errorMessage('Error in the query'));
+      .then((response) => {
+        const result = (response as unknown as DataSearchType).data.results;
+        if (result) {
+          if (result.length === 0)
+            warningMessage(
+              "There are no results for this search please make sure you did not make a typo"
+            );
+          setResults(result);
+        }
+      })
+      .catch((error) => errorMessage("Error in the query"));
   }, [errorMessage, search, warningMessage]);
 
   const funFact = (data as unknown as { text: string }).text;

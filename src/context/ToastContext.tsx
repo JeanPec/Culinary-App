@@ -15,12 +15,53 @@ export const ToastContext = createContext<ToastConfigType | null>(null);
 export const ToastProvider = ({ children }: HTMLAttributes<{}>) => {
   const [toastList, setToastList] = useState<ToastProperty[]>([]);
 
-  const errorMessage = (description: string) => setToastList([...toastList, { id: toastList.length + 1, title: ToastType.Error, description: description}]);
-  const infoMessage = (description: string) => setToastList([...toastList, { id: toastList.length + 1, title: ToastType.Info, description: description}]);
-  const warningMessage = (description: string) => setToastList([...toastList, { id: toastList.length + 1, title: ToastType.Warning, description: description}]);
-  const successMessage = (description: string) => setToastList([...toastList, { id: toastList.length + 1, title: ToastType.Success, description: description}]);
+  const errorMessage = (description: string) =>
+    setToastList([
+      ...toastList,
+      {
+        id: toastList.length + 1,
+        title: ToastType.Error,
+        description: description,
+      },
+    ]);
+  const infoMessage = (description: string) =>
+    setToastList([
+      ...toastList,
+      {
+        id: toastList.length + 1,
+        title: ToastType.Info,
+        description: description,
+      },
+    ]);
+  const warningMessage = (description: string) =>
+    setToastList([
+      ...toastList,
+      {
+        id: toastList.length + 1,
+        title: ToastType.Warning,
+        description: description,
+      },
+    ]);
+  const successMessage = (description: string) =>
+    setToastList([
+      ...toastList,
+      {
+        id: toastList.length + 1,
+        title: ToastType.Success,
+        description: description,
+      },
+    ]);
   return (
-    <ToastContext.Provider value={{ toastList, setToastList, errorMessage, infoMessage, warningMessage, successMessage }}>
+    <ToastContext.Provider
+      value={{
+        toastList,
+        setToastList,
+        errorMessage,
+        infoMessage,
+        warningMessage,
+        successMessage,
+      }}
+    >
       {children}
     </ToastContext.Provider>
   );

@@ -32,7 +32,9 @@ export const useFetch = ({
     axios
       .get(url, {
         params: {
-          apiKey: fact ? process.env.REACT_APP_SPOONACULAR_API_KEY_FACT : process.env.REACT_APP_SPOONACULAR_API_KEY,
+          apiKey: fact
+            ? process.env.REACT_APP_SPOONACULAR_API_KEY_FACT
+            : process.env.REACT_APP_SPOONACULAR_API_KEY,
         },
         headers: {
           "Content-Type": "application/json",

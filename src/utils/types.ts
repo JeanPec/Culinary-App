@@ -50,6 +50,36 @@ export type WinePairing = {
   productMatches: Wine[];
 };
 
+export type Equipment = {
+  id: number;
+  image: string;
+  localizedName: string;
+  name: string;
+};
+
+export type SimpleIngredient = {
+  id: number;
+  image: string;
+  localizedName: string;
+  name: string;
+};
+
+export type RecipeStep = {
+  number: number;
+  equipment?: Equipment[];
+  ingredients?: SimpleIngredient[];
+  length?: {
+    number: number;
+    unit: string;
+  };
+  step: string;
+};
+
+export type AnalizedInstructions = {
+  name: string;
+  steps: RecipeStep[];
+};
+
 export type RecipeType = {
   id: number;
   title: string;
@@ -61,22 +91,13 @@ export type RecipeType = {
   spoonacularScore: number;
   cheap: boolean;
   dairyFree: boolean;
-  instructions?: string;
+  analyzedInstructions?: AnalizedInstructions[];
   cuisines: string[];
   glutenFree: boolean;
   vegan: boolean;
   extendedIngredients: ExtendedIngredients[];
   summary: string;
   winePairing: WinePairing;
-};
-
-export type RecipeInstruction = {
-  number: number;
-  step: string;
-};
-
-export type RecipeInstructions = {
-  steps: RecipeInstruction[];
 };
 
 export type RecipeSearchType = {

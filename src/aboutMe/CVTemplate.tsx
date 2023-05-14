@@ -86,8 +86,17 @@ export const CVTemplate = () => {
         <div className="resume_item resume_work">
           <div className="title">
             <p className="bold">Work Experience</p>
-            <Link to={"/files/CV_Sylvain_Derory_Online.pdf"} target="_blank" download>
-              <Button className="downloadButton" onClick={() => infoMessage('Thank you for downloading my Resume')}>
+            <Link
+              to={"/files/CV_Sylvain_Derory_Online.pdf"}
+              target="_blank"
+              download
+            >
+              <Button
+                className="downloadButton"
+                onClick={() =>
+                  infoMessage("Thank you for downloading my Resume")
+                }
+              >
                 Download Resume
               </Button>
             </Link>
@@ -260,4 +269,5 @@ export const CVTemplate = () => {
         </div>
       </div>
     </div>
-  );};
+  );
+};

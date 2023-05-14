@@ -25,13 +25,13 @@ export const RecipePage = () => {
     () =>
       Object.values(RecipeCategories).filter((element) => {
         if (
-          !recipeInformation.instructions &&
+          !recipeInformation.analyzedInstructions &&
           !recipeInformation.winePairing?.pairingText
         ) {
           if (element === RecipeCategories.IngredientsSteps) return false;
           if (element === RecipeCategories.Wine) return false;
         }
-        if (!recipeInformation.instructions) {
+        if (!recipeInformation.analyzedInstructions) {
           if (element === RecipeCategories.IngredientsSteps) return false;
         }
         if (!recipeInformation.winePairing) {
@@ -93,7 +93,7 @@ export const RecipePage = () => {
           path="IngredientsSteps"
           element={
             <IngredientsStepPage
-              recipeInstructions={recipeInformation.instructions}
+              recipeInstructions={recipeInformation.analyzedInstructions}
             />
           }
         />

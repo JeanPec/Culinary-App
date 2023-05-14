@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Culinary-App/static/css/main.e9154268.css",
-    "main.js": "/Culinary-App/static/js/main.42bcfde0.js",
+    "main.css": "/Culinary-App/static/css/main.2bd942b0.css",
+    "main.js": "/Culinary-App/static/js/main.d01611d1.js",
     "static/js/787.5a06f92f.chunk.js": "/Culinary-App/static/js/787.5a06f92f.chunk.js",
     "static/media/profile.jpg": "/Culinary-App/static/media/profile.b397943d01a4e703cc99.jpg",
     "index.html": "/Culinary-App/index.html",
-    "main.e9154268.css.map": "/Culinary-App/static/css/main.e9154268.css.map",
-    "main.42bcfde0.js.map": "/Culinary-App/static/js/main.42bcfde0.js.map",
+    "main.2bd942b0.css.map": "/Culinary-App/static/css/main.2bd942b0.css.map",
+    "main.d01611d1.js.map": "/Culinary-App/static/js/main.d01611d1.js.map",
     "787.5a06f92f.chunk.js.map": "/Culinary-App/static/js/787.5a06f92f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e9154268.css",
-    "static/js/main.42bcfde0.js"
+    "static/css/main.2bd942b0.css",
+    "static/js/main.d01611d1.js"
   ]
 }

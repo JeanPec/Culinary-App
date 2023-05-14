@@ -7,7 +7,6 @@ import {
 } from "../components";
 import { ExtendedIngredients, round } from "../utils";
 
-import "./SummaryPage.css";
 import { Loading } from "../splash/Loading";
 
 interface IngredientsListPageProps {

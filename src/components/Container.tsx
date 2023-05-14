@@ -1,7 +1,7 @@
 import React, { AllHTMLAttributes } from "react";
 import cn from "classnames";
 
-import "./Border.css";
+import styles from "./Border.module.css";
 
 interface ContainerProps extends AllHTMLAttributes<HTMLDivElement> {
   header?: boolean;
@@ -16,10 +16,10 @@ export const Container = React.forwardRef(
     <div
       ref={ref}
       className={cn(
-        "container",
+        styles.container,
         {
-          gutterBottom: gutterBottom,
-          header: header,
+          [styles.gutterBottom]: gutterBottom,
+          [styles.header]: header,
         },
         className
       )}

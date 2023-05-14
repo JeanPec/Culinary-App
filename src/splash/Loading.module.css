@@ -1,4 +1,4 @@
-.pizza-container {
+.pizza_container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -121,19 +121,19 @@
   background-color: #e8d83a;
 }
 
-.pizza .slices .slice-1 {
+.pizza .slices .slice_1 {
   transform: rotate(45deg);
 }
 
-.pizza .slices .slice-2 {
+.pizza .slices .slice_2 {
   transform: rotate(90deg);
 }
 
-.pizza .slices .slice-3 {
+.pizza .slices .slice_3 {
   transform: rotate(135deg);
 }
 
-.pizza .slices .slice-4 {
+.pizza .slices .slice_4 {
   transform: rotate(180deg);
 }
 

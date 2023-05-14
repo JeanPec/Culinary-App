@@ -3,7 +3,6 @@ import { Navigate, Outlet, Route, Routes, useParams } from "react-router-dom";
 import { useFetch } from "../hooks";
 import { Loading } from "../splash/Loading";
 
-import "./RecipePage.css";
 import { Container, FlexContainer } from "../components";
 import { RecipeCategories, RecipeType } from "../utils";
 import { NavLinkButton } from "../components/NavLinkButton";
@@ -11,6 +10,8 @@ import { SummaryPage } from "./SummaryPage";
 import { IngredientsListPage } from "./IngredientsListPage";
 import { IngredientsStepPage } from "./IngredientsStepPage";
 import { WinePage } from "./WinePage";
+
+import styles from "./RecipePage.module.css";
 
 export const RecipePage = () => {
   const { id } = useParams();
@@ -62,7 +63,7 @@ export const RecipePage = () => {
             </Container>
             <FlexContainer align={"center"} gap={10} gutterBottom>
               <img
-                className="recipeImage"
+                className={styles.recipeImage}
                 src={recipeInformation.image}
                 alt={`${recipeInformation.title} recipe`}
               />

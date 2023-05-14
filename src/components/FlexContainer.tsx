@@ -1,7 +1,7 @@
 import React, { AllHTMLAttributes, CSSProperties } from "react";
 import cn from "classnames";
 
-import "./FlexContainer.css";
+import styles from "./FlexContainer.module.css";
 
 interface FlexContainerProps extends AllHTMLAttributes<any> {
   align?: CSSProperties["alignItems"];
@@ -30,11 +30,11 @@ export const FlexContainer = React.forwardRef(
     <div
       ref={ref}
       className={cn(
-        "container",
+        styles.container,
         {
-          column: direction === "column",
-          gutterBottom: gutterBottom,
-          fullWidth: fullWidth,
+          [styles.column]: direction === "column",
+          [styles.gutterBottom]: gutterBottom,
+          [styles.fullWidth]: fullWidth,
         },
         className
       )}

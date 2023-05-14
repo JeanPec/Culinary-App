@@ -6,7 +6,7 @@ import { Loading } from "../splash/Loading";
 import { Button, SearchBar } from "../ui";
 import { DataSearchType, RecipeSearchType } from "../utils";
 
-import "./SearchPage.css";
+import styles from "./SearchPage.module.css";
 
 export const SearchPage = () => {
   const [search, setSearch] = useState<string>('');
@@ -39,19 +39,19 @@ export const SearchPage = () => {
   return (
     <main>
       <Container header gutterBottom>
-        <h1 className="titleSearch">
+        <h1 className={styles.titleSearch}>
           Looking for an idea ? <br />
           Type in your ingredients to get an awesome Recipe !
         </h1>
       </Container>
-      <FlexContainer direction="column" className="resultMain">
+      <FlexContainer direction="column" className={styles.resultMain}>
         <Border gutterBottom>
           <h3>
             Fun Fact to get you started: {loadingFact ? "loading..." : funFact}
           </h3>
           <FlexContainer justify="center">
             <SearchBar
-              className="searchBar"
+              className={styles.searchBar}
               onValueChanged={setSearch}
               onSearch={handleSearch}
               placeHolder={"Apple,Cheese,flour"}
@@ -60,7 +60,7 @@ export const SearchPage = () => {
           </FlexContainer>
         </Border>
         {results.length > 0 && (
-          <div className="results">
+          <div className={styles.results}>
             {results.map(({ id, title, image }) => (
               <RecipeResult id={id} title={title} image={image} />
             ))}

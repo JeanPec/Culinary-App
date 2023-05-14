@@ -58,11 +58,11 @@ export const CVTemplate = () => {
                 <FontAwesomeIcon className="icon" icon={faLinkedin} />
                 <div className="data">
                   <a
-                    href="linkedin.com/in/sylvain-derory-0398a1184"
+                    href="https://linkedin.com/in/sylvain-derory-0398a1184"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    linkedin.com/in/sylvain-derory-0398a1184
+                    linkedin.com/in/sylvain-derory
                   </a>
                 </div>
               </li>
@@ -74,7 +74,7 @@ export const CVTemplate = () => {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    https://github.com/JeanPec
+                    github.com/JeanPec
                   </a>
                 </div>
               </li>

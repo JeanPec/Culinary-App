@@ -2,7 +2,7 @@ import React from "react";
 import DOMPurify from "dompurify";
 import { Border } from "../components";
 
-import "./SummaryPage.css";
+import styles from "./SummaryPage.module.css";
 
 interface SummaryPageProps {
   summaryContent: string;
@@ -14,7 +14,7 @@ export const SummaryPage = ({ summaryContent }: SummaryPageProps) => {
   return (
     <Border>
       <p
-        className="summary"
+        className={styles.summary}
         dangerouslySetInnerHTML={{ __html: sanitizedHtmlContent }}
       />
     </Border>

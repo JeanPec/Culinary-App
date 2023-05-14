@@ -9,7 +9,7 @@ import { NavLink } from "react-router-dom";
 import { Button } from "../ui";
 import { RecipeCategories } from "../utils";
 
-import "./NavLinkButton.css";
+import styles from "./NavLinkButton.module.css";
 
 export interface RecipeResultProps {
   className?: string;
@@ -48,7 +48,7 @@ export const NavLinkButton = ({ title, className }: RecipeResultProps) => {
   }
 
   return (
-    <NavLink className={"navLink"} to={route}>
+    <NavLink className={styles.navLink} to={route}>
       <Button className={className} iconBefore={image}>
         {title}
       </Button>

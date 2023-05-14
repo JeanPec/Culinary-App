@@ -1,7 +1,7 @@
 import React, { AllHTMLAttributes } from "react";
 import cn from "classnames";
 
-import "./Border.css";
+import styles from "./Border.module.css";
 
 interface BorderProps extends AllHTMLAttributes<HTMLDivElement> {
   small?: boolean;
@@ -23,11 +23,11 @@ export const Border = React.forwardRef(
     <div
       ref={ref}
       className={cn(
-        "border",
+        styles.border,
         {
-          gutterBottom: gutterBottom,
-          noBackGround: noBackGround,
-          small: small,
+          [styles.gutterBottom]: gutterBottom,
+          [styles.noBackGround]: noBackGround,
+          [styles.small]: small,
         },
         className
       )}

@@ -1,7 +1,7 @@
 import { DropDown } from "../ui";
 import { Border } from "./Border";
 
-import "./IngredientContainer.css";
+import styles from "./IngredientContainer.module.css";
 
 export interface IngredientContainerProps {
   image: string;
@@ -19,14 +19,14 @@ export const IngredientContainer = ({
   return (
     <Border noBackGround gutterBottom>
       <DropDown overlay={<span>Available in aisle {aisle}</span>}>
-        <li className="listItem">
+        <li className={styles.listItem}>
           <img
-            className="imageRecipe"
+            className={styles.imageRecipe}
             src={"https://spoonacular.com/cdn/ingredients_100x100/" + image}
             alt={`${name} ingredient`}
           />
           <span>{name}</span>
-          <span className={"recipeMeasure"}>{measure}</span>
+          <span className={styles.recipeMeasure}>{measure}</span>
         </li>
       </DropDown>
     </Border>

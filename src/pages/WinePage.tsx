@@ -1,7 +1,7 @@
 import React from "react";
 import { Border } from "../components";
 
-import "./SummaryPage.css";
+import styles from "./SummaryPage.module.css";
 
 interface WinePageProps {
   summaryContent: string;
@@ -10,7 +10,7 @@ interface WinePageProps {
 export const WinePage = ({ summaryContent }: WinePageProps) => {
   return (
     <Border>
-      <p className="summary">{summaryContent}</p>
+      <p className={styles.summary}>{summaryContent}</p>
     </Border>
   );
 };

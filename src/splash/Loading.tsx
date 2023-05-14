@@ -1,21 +1,21 @@
 import React from "react";
 
-import "./Loading.css";
+import styles from "./Loading.module.css";
 
 export const Loading = () => (
-  <div className="pizza-container">
-    <div className="pizza">
-      <div className="basil">
-        <div className="leaf" />
+  <div className={styles.pizza_container}>
+    <div className={styles.pizza}>
+      <div className={styles.basil}>
+        <div className={styles.leaf} />
       </div>
-      <div className="onions" />
-      <div className="pepperonis" />
-      <div className="olives" />
-      <div className="slices">
-        <div className="slice slice-1" />
-        <div className="slice slice-2" />
-        <div className="slice slice-3" />
-        <div className="slice slice-4" />
+      <div className={styles.onions} />
+      <div className={styles.pepperonis} />
+      <div className={styles.olives} />
+      <div className={styles.slices}>
+        <div className={`${styles.slice} ${styles.slice_1}`} />
+        <div className={`${styles.slice} ${styles.slice_2}`} />
+        <div className={`${styles.slice} ${styles.slice_3}`} />
+        <div className={`${styles.slice} ${styles.slice_4}`} />
       </div>
     </div>
   </div>

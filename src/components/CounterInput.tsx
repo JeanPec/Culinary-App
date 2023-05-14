@@ -4,7 +4,7 @@ import React, { ChangeEvent, HTMLAttributes } from "react";
 import { FlexContainer } from "../components";
 import { Button } from "../ui";
 
-import "./CounterInput.css";
+import styles from "./CounterInput.module.css";
 
 export interface CounterInputProps extends HTMLAttributes<HTMLInputElement> {
   value: number;
@@ -24,7 +24,7 @@ export const CounterInput = React.forwardRef(
     return (
       <FlexContainer direction={"column"} justify="center">
         {!!label && (
-          <label className="label" htmlFor="counterInput">
+          <label className={styles.label} htmlFor="counterInput">
             {label}
           </label>
         )}
@@ -38,7 +38,7 @@ export const CounterInput = React.forwardRef(
             id="counterInput"
             value={value.toString()}
             onChange={handleChange}
-            className={"numberInput"}
+            className={styles.numberInput}
             type="number"
             min={0}
             max={10000}

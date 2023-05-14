@@ -1,7 +1,7 @@
 import { Button } from "../ui";
 import cn from "classnames";
 
-import "./StateButton.css";
+import styles from "./StateButton.module.css";
 
 export interface StateButtonProps {
   optionTrue: string;
@@ -17,11 +17,11 @@ export const StateButton = ({
   setState,
 }: StateButtonProps) => {
   return (
-    <div className="stateButton">
+    <div className={styles.stateButton}>
       <Button
         disableStyle
-        className={cn("stateOption", {
-          activeState: state,
+        className={cn(styles.stateOption, {
+          [styles.activeState]: state,
         })}
         onClick={() => {
           if (!state) setState(true);
@@ -29,11 +29,11 @@ export const StateButton = ({
       >
         {optionTrue}
       </Button>
-      <div className="horizontalDivider" />
+      <div className={styles.horizontalDivider} />
       <Button
         disableStyle
-        className={cn("stateOption", {
-          activeState: !state,
+        className={cn(styles.stateOption, {
+          [styles.activeState]: !state,
         })}
         onClick={() => {
           if (state) setState(false);

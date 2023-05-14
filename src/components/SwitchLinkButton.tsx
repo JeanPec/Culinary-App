@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "../ui";
 
-import "./SwitchLinkButton.css";
+import styles from "./SwitchLinkButton.module.css";
 
 export const SwitchLinkButton = () => {
   const location = useLocation();
@@ -14,10 +14,10 @@ export const SwitchLinkButton = () => {
   ) : (
     <FontAwesomeIcon icon={faUser} />
   );
-  const title = isAboutMe ? "Culinary App" : "about me";
+  const title = isAboutMe ? "Culinary App" : "About Me";
 
   return (
-    <Link className={"switchLink"} to={route}>
+    <Link className={styles.switchLink} to={route}>
       <Button iconBefore={image}>{title}</Button>
     </Link>
   );

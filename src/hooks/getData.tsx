@@ -8,12 +8,6 @@ interface useGetProps {
   writeToCacheBoolean?: boolean;
 }
 
-/*
-    useFetch:
-        - Custom Hook to get the info of an endpoint
-        - use LocalStorage to read from cache at first (enhances UX) then update with the querry call
- */
-
 export const getData = async ({ endpoint, query, number }: useGetProps) => {
   const url = `https://api.spoonacular.com/${endpoint}`;
   try {
@@ -29,6 +23,6 @@ export const getData = async ({ endpoint, query, number }: useGetProps) => {
       },
     });
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 };

@@ -2,7 +2,7 @@ import cn from "classnames";
 import React, { HTMLAttributes } from "react";
 import { FlexContainer } from "../components";
 
-import "./Button.css";
+import styles from "./Button.module.css";
 
 export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   seeMore?: boolean;
@@ -34,7 +34,7 @@ export const Button = React.forwardRef(
     <button
       type="button"
       disabled={disabled}
-      className={cn(className, { button: !disableStyle })}
+      className={cn(className, { [styles.button]: !disableStyle })}
       ref={ref}
       {...props}
     >

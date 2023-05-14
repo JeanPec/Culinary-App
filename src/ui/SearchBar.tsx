@@ -1,6 +1,6 @@
 import React, { ChangeEvent, HTMLAttributes } from "react";
 
-import "./SearchBar.css";
+import styles from "./SearchBar.module.css";
 
 /*
     SearchBar:
@@ -25,6 +25,7 @@ export const SearchBar = React.forwardRef(
     return (
       <input
         ref={ref}
+        className={styles.input}
         placeholder={placeHolder || "Search..."}
         onChange={handleChange}
         onKeyDown={(event) => {

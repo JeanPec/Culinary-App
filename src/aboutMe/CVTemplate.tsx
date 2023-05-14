@@ -6,8 +6,11 @@ import React from "react";
 import ProfileIcon from "../assets/profile.jpg";
 import { Button } from "../ui";
 import { Link } from "react-router-dom";
+import { useToastContext } from "../context";
 
-export const CVTemplate = () => (
+export const CVTemplate = () => {
+  const { infoMessage } = useToastContext();
+  return (
     <div className="resume">
       <div className="resume_left">
         <div className="resume_profile">
@@ -84,7 +87,7 @@ export const CVTemplate = () => (
           <div className="title">
             <p className="bold">Work Experience</p>
             <Link to={"/files/CV_Sylvain_Derory_Online.pdf"} target="_blank" download>
-              <Button className="downloadButton">
+              <Button className="downloadButton" onClick={() => infoMessage('Thank you for downloading my Resume')}>
                 Download Resume
               </Button>
             </Link>
@@ -257,4 +260,4 @@ export const CVTemplate = () => (
         </div>
       </div>
     </div>
-  );
+  );};

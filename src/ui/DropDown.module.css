@@ -2,7 +2,7 @@
   position: relative;
 }
 
-.dropdown-menu {
+.dropdown_menu {
   display: none;
   position: absolute;
   margin-top: 10px;
@@ -14,7 +14,7 @@
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5); /*Adds a drop shadow*/
 }
 
-.dropdown-menu:after {
+.dropdown_menu:after {
   content: ""; /* Required to display content */
   position: absolute; /* Sets the position absolute to the top div */
   top: 0;
@@ -29,7 +29,7 @@
   border-right: solid 15px transparent; /* Creates triangle effect */
 }
 
-.dropdown-menu a {
+.dropdown_menu a {
   color: var(--color-scale-beige);
   padding: 12px 16px;
   text-decoration: none;

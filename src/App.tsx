@@ -9,6 +9,8 @@ import {
 import { RecipePage, SearchPage } from "./pages";
 import { SwitchLinkButton } from "./components";
 import { AboutMePage } from "./aboutMe";
+import { Toast } from "./ui";
+import { ToastPosition } from "./utils";
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
             <>
               <Outlet />
               <SwitchLinkButton />
+              <Toast position={ToastPosition.top}/>
             </>
           }
         >

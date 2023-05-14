@@ -92,3 +92,21 @@ export type DataSearchType = {
     results: RecipeSearchType[];
   };
 };
+
+export enum ToastType {
+  Error = "Error",
+  Warning = "Warning",
+  Info = "Info",
+  Success = "Success",
+}
+
+export type ToastProperty = {
+  id: number;
+  title: ToastType;
+  description: string;
+};
+
+export enum ToastPosition {
+  right = "bottom-right",
+  top = "top-middle",
+}

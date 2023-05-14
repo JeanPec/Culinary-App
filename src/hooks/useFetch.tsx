@@ -5,6 +5,9 @@ import { readFromCache, writeToCache } from "../utils/cache";
 interface useFetchProps {
   endpoint: string;
   writeToCacheBoolean?: boolean;
+  fact?: boolean;
+  successDescription?: string;
+  errorDescription?: string;
 }
 
 /*
@@ -16,6 +19,7 @@ interface useFetchProps {
 export const useFetch = ({
   endpoint,
   writeToCacheBoolean = true,
+  fact = false,
 }: useFetchProps) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -28,7 +32,7 @@ export const useFetch = ({
     axios
       .get(url, {
         params: {
-          apiKey: process.env.REACT_APP_SPOONACULAR_API_KEY || "",
+          apiKey: fact ? process.env.REACT_APP_SPOONACULAR_API_KEY_FACT : process.env.REACT_APP_SPOONACULAR_API_KEY,
         },
         headers: {
           "Content-Type": "application/json",
@@ -39,9 +43,12 @@ export const useFetch = ({
         setData(response.data);
         if (writeToCacheBoolean) writeToCache(url, response.data);
       })
-      .catch((error: any) => setError(error))
+      .catch((error: any) => {
+        console.error(error);
+        setError(error);
+      })
       .finally(() => setLoading(false));
-  }, [endpoint, writeToCacheBoolean]);
+  }, [endpoint, writeToCacheBoolean, fact]);
 
   return { data, loading, error };
 };

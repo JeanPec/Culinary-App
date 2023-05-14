@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from "react";
 import { Border, Container, FlexContainer, RecipeResult } from "../components";
+import { useToastContext } from "../context";
 import { useFetch, getData } from "../hooks";
 import { Loading } from "../splash/Loading";
 import { Button, SearchBar } from "../ui";
@@ -8,11 +9,13 @@ import { DataSearchType, RecipeSearchType } from "../utils";
 import "./SearchPage.css";
 
 export const SearchPage = () => {
-  const [search, setSearch] = useState<string>();
+  const [search, setSearch] = useState<string>('');
   const [results, setResults] = useState<RecipeSearchType[]>([]);
+  const { warningMessage, errorMessage } = useToastContext();
 
   const { data, loading: loadingFact } = useFetch({
     endpoint: "food/trivia/random",
+    fact: true,
   });
 
   const handleSearch = useCallback(() => {
@@ -21,9 +24,13 @@ export const SearchPage = () => {
       query: { query: search },
     }).then((response) => {
       const result = (response as unknown as DataSearchType).data.results;
-      if (result) setResults(result);
-    });
-  }, [search]);
+      if (result) {
+        if(result.length === 0) warningMessage('There are no results for this search please make sure you did not make a typo');
+        setResults(result);
+      };
+    })
+    .catch((error)=> errorMessage('Error in the query'));
+  }, [errorMessage, search, warningMessage]);
 
   const funFact = (data as unknown as { text: string }).text;
 

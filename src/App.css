@@ -10,6 +10,11 @@
   --color-scale-green-3: #006400;
   --color-scale-green-4: #004d00;
   --color-scale-green-5: #003a00;
+
+  --color-scale-success: #5cb85c;
+  --color-scale-warning: #f0ad4e;
+  --color-scale-error: #d9534f;
+  --color-scale-info: #5bc0de;
 }
 
 main {

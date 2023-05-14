@@ -2,6 +2,10 @@
   width: 80vw;
 }
 
+.no_results {
+  color: var(--color-scale-black); 
+}
+
 h3 {
   font-size: medium;
 }

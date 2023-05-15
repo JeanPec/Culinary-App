@@ -3,9 +3,8 @@ import { Navigate, Outlet, Route, Routes, useParams } from "react-router-dom";
 import { useFetch } from "../hooks";
 import { Loading } from "../splash/Loading";
 
-import { Container, FlexContainer } from "../components";
+import { Container, FlexContainer, NavLinkButton } from "../components";
 import { RecipeCategories, RecipeType } from "../utils";
-import { NavLinkButton } from "../components/NavLinkButton";
 import { SummaryPage } from "./SummaryPage";
 import { IngredientsListPage } from "./IngredientsListPage";
 import { IngredientsStepPage } from "./IngredientsStepPage";

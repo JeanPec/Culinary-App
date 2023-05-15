@@ -3,11 +3,13 @@ import {
   faList,
   faWineBottle,
   faArrowLeft,
+  faUserTie,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NavLink } from "react-router-dom";
 import { Button } from "../ui";
 import { RecipeCategories } from "../utils";
+import cn from "classnames";
 
 import styles from "./NavLinkButton.module.css";
 
@@ -41,6 +43,10 @@ export const NavLinkButton = ({ title, className }: RecipeResultProps) => {
       route = "/search";
       image = <FontAwesomeIcon icon={faArrowLeft} />;
       break;
+    case "Resume":
+      route = "resume";
+      image = <FontAwesomeIcon icon={faUserTie} />;
+      break;
     default:
       route = "/search";
       image = <FontAwesomeIcon icon={faArrowLeft} />;
@@ -49,7 +55,7 @@ export const NavLinkButton = ({ title, className }: RecipeResultProps) => {
 
   return (
     <NavLink className={styles.navLink} to={route}>
-      <Button className={className} iconBefore={image}>
+      <Button className={cn(className, styles.button)} iconBefore={image}>
         {title}
       </Button>
     </NavLink>

@@ -115,7 +115,8 @@ export const CVTemplate = () => {
                     solution to manage Data-Science Team.
                   </li>
                   <li>
-                    Integration and Unit Test using Jest, Apollo client testing.
+                    Conducted unit testing to deliver optimal browser
+                    functionality using Jest, Apollo client testing
                   </li>
                   <li>Created our own component from HTML elements</li>
                   <li>
@@ -127,8 +128,13 @@ export const CVTemplate = () => {
                     UX.
                   </li>
                   <li>
-                    Interact with the design and product team to optimize the
-                    UX. (Figma, Jira)
+                    Collaborated with in-house web designers to create sleek and
+                    innovative UI design. (Figma, Jira)
+                  </li>
+                  <li>
+                    Created an attachment preview galleries with a full-screen
+                    preview for each of the attachment similar to tools like
+                    Slack or Jira
                   </li>
                 </ul>
               </div>
@@ -145,11 +151,19 @@ export const CVTemplate = () => {
                     Developed Supervision Software for sensors on a textile
                     production line.
                   </li>
-                  <li>Define needs and design with the client.</li>
                   <li>
-                    Developed in Qt Quick, QML. Use of Pcan protocol to exchange
-                    with the sensors.
+                    Ran debugging tools to eliminate flaws and glitches prior to
+                    publishing.
                   </li>
+                  <li>
+                    Translated UX and business requirements into elegant code
+                    solutions.
+                  </li>
+                  <li>
+                    Coded using Qt Quick, QML to develop features for both
+                    mobile and desktop platforms.
+                  </li>
+                  <li>Use of Pcan protocol to exchange with the sensors</li>
                   <li>Implementation of DevOps tools (doxygen, GitHub …)</li>
                   <li>
                     Development of detail documentation of the UI and the
@@ -187,6 +201,10 @@ export const CVTemplate = () => {
                     Developed in C# a Motor Visualisation System. Developed Test
                     for the HMI integration.
                   </li>
+                  <li>
+                    Prepared standard reports and documentation to communicate
+                    results to senior management.
+                  </li>
                 </ul>
               </div>
             </li>
@@ -207,13 +225,13 @@ export const CVTemplate = () => {
                 </p>
                 <ul>
                   <li>
-                    Alternate between two weeks of School and two weeks of Work
-                    (Apprenticeship)
+                    Relevant Coursework: Software Development, Agile
+                    Methodologies, Programming Courses in C, C++, C#, Kotlin,
+                    Typescript,Angular, Java, Linux, network systems
                   </li>
-                  <li>
-                    Practical Courses (User chat coded in C language using Data
-                    Socket, TCP connection between process, pipe)
-                  </li>
+                  <li>Ranked in Top 15% of class</li>
+                  <li>Rugby Club Member</li>
+                  <li>Interniship Abroad: Baden-Baden, Germany</li>
                 </ul>
               </div>
             </li>
@@ -225,12 +243,13 @@ export const CVTemplate = () => {
                 </p>
                 <ul>
                   <li>
-                    Preparatory Classes: Computer Science, Electricity, Math,
+                    Relevant Coursework: Computer Science, Electricity, Math,
                     Physics
                   </li>
                   <li>
-                    Practical Courses: Library coded in Java language, manage
-                    loan, date of borrowing of books
+                    Professional Development: Practical Electricity courses
+                    Tri-phase motor starter system, assembly electrical grid for
+                    farming warehouse.
                   </li>
                 </ul>
               </div>
@@ -246,6 +265,7 @@ export const CVTemplate = () => {
               English: CECRL C1 Professional working proficiency, TOEIC
               certification 990/990
             </li>
+            <li>French: Native</li>
             <li>German: CECRL B2 Professional working proficiency</li>
           </ul>
         </div>

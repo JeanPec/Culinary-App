@@ -5,4 +5,5 @@ export { FlexContainer } from "./FlexContainer";
 export { RecipeResult } from "./RecipeResult";
 export { IngredientContainer } from "./IngredientContainer";
 export { StateButton } from "./StateButton";
+export { NavLinkButton } from "./NavLinkButton";
 export { SwitchLinkButton } from "./SwitchLinkButton";

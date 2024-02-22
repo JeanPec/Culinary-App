@@ -103,7 +103,34 @@ export const CVTemplate = () => {
           </div>
           <ul>
             <li>
-              <div className="date">Feb 2022</div>
+              <div className="date">Sep 2024</div>
+              <div className="info">
+                <p className="semi-bold">
+                  Frontend Web Engineer at VECTICE : Nantes, France
+                </p>
+                <ul>
+                  <li>
+                    Created Google-like Comments, with mention feature on our
+                    Documentation using Lexical library
+                  </li>
+                  <li>
+                    Added LLM-Prompt feature to generate automatically
+                    documentation from Users Projects
+                  </li>
+                  <li>
+                    Created Lightbox component to showcase previews from
+                    documents, notebook, CSV and Images
+                  </li>
+                  <li>
+                    Adopted UX Principles, participated in discussion to provide
+                    the best solution to reduce cognitive load, simplify the
+                    User Experience
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div className="date">Feb 2022 - Sep 2023</div>
               <div className="info">
                 <p className="semi-bold">
                   Frontend Web Engineer at VECTICE : San Francisco, United

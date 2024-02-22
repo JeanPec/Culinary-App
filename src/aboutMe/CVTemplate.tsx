@@ -25,7 +25,7 @@ export const CVTemplate = () => {
             <ul>
               <li>
                 <FontAwesomeIcon className="icon" icon={faLocationDot} />
-                <div className="data">Oakland USA</div>
+                <div className="data">Nantes France</div>
               </li>
               <li>
                 <FontAwesomeIcon className="icon" icon={faEnvelope} />
@@ -42,7 +42,7 @@ export const CVTemplate = () => {
               <p className="bold">profile</p>
             </div>
             <ul>
-              <li>FrontEnd Web Engineer, 4 years of experience,</li>
+              <li>FrontEnd Web Engineer, 5 years of experience,</li>
               <li>
                 Master in Sciences, Major in Electronic and Industrial Software
                 Engineering

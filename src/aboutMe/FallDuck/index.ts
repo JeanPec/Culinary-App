@@ -1,0 +1,1 @@
+export { FallDuck } from "./FallDuck";

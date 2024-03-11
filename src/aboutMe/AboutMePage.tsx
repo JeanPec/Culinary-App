@@ -5,6 +5,7 @@ import { Border, Container } from "../components";
 import "./AboutMe.css";
 import { CVTemplate } from "./CVTemplate";
 import { Header } from "./Header";
+import { FallDuck } from "./FallDuck";
 
 export const AboutMePage = () => {
   return (
@@ -88,6 +89,7 @@ export const AboutMePage = () => {
           }
         />
         <Route path="resume" element={<CVTemplate />} />
+        <Route path="fallDuck" element={<FallDuck />} />
       </Route>
     </Routes>
   );

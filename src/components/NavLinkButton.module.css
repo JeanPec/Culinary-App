@@ -1,8 +1,8 @@
-.navLink[class~='active'] .button {
+.navLink[class~="active"] .button {
   color: var(--color-scale-black);
   background-color: var(--color-scale-green-1) !important;
 }
 
-.navLink .button{
+.navLink .button {
   min-width: 20vw;
 }

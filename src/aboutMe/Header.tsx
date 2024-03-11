@@ -5,6 +5,7 @@ export const Header = () => {
     <FlexContainer>
       <NavLinkButton title="Summary" />
       <NavLinkButton title="Resume" />
+      <NavLinkButton title="FallDuck" />
     </FlexContainer>
   );
 };

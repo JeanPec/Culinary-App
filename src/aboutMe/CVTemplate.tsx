@@ -103,38 +103,11 @@ export const CVTemplate = () => {
           </div>
           <ul>
             <li>
-              <div className="date">Sep 2024</div>
+              <div className="date">Frontend Web Engineer at VECTICE</div>
               <div className="info">
                 <p className="semi-bold">
-                  Frontend Web Engineer at VECTICE : Nantes, France
-                </p>
-                <ul>
-                  <li>
-                    Created Google-like Comments, with mention feature on our
-                    Documentation using Lexical library
-                  </li>
-                  <li>
-                    Added LLM-Prompt feature to generate automatically
-                    documentation from Users Projects
-                  </li>
-                  <li>
-                    Created Lightbox component to showcase previews from
-                    documents, notebook, CSV and Images
-                  </li>
-                  <li>
-                    Adopted UX Principles, participated in discussion to provide
-                    the best solution to reduce cognitive load, simplify the
-                    User Experience
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <div className="date">Feb 2022 - Sep 2023</div>
-              <div className="info">
-                <p className="semi-bold">
-                  Frontend Web Engineer at VECTICE : San Francisco, United
-                  States
+                  San Francisco, United States Feb 2022 - Sep 2023, Nantes,
+                  France Sep 2023
                 </p>
                 <ul>
                   <li>
@@ -142,26 +115,39 @@ export const CVTemplate = () => {
                     solution to manage Data-Science Team.
                   </li>
                   <li>
-                    Conducted unit testing to deliver optimal browser
-                    functionality using Jest, Apollo client testing
+                    Created and refactored unit tests to deliver optimal browser
+                    functionality using Jest, Apollo client testing. Improved
+                    test coverage from 40 to 80%
                   </li>
-                  <li>Created our own component from HTML elements</li>
                   <li>
+                    Created Google-like Comments, with mention and edit feature,
+                    manage highlighted text, manage staus Resolved and
+                    Unresolved on our Documentation using Lexical library
+                  </li>
+                  <li>
+                    Integrated LLM-Prompt feature to generate automatically
+                    documentation from Users Projects to avoid white page effect
+                  </li>
+                  <li>
+                    Created an attachment preview galleries with a full-screen
+                    preview for each of the assets (documents, notebook, CSV and
+                    Images) Avoid downloading the resource saving 2-3 minutes
+                    per asset
+                  </li>
+                  <li>
+                    Adopted UX Principles, participated in discussion to provide
+                    the best solution to reduce cognitive load, simplify the
+                    User Experience
+                  </li>
+                  <li>
+                    Created a component library using HTML and Sass and
                     Development of a stand-alone graphical library for graph
                     generation with Visx
                   </li>
                   <li>
                     Optimize cache management with GraphQL to provide the best
-                    UX.
-                  </li>
-                  <li>
-                    Collaborated with in-house web designers to create sleek and
-                    innovative UI design. (Figma, Jira)
-                  </li>
-                  <li>
-                    Created an attachment preview galleries with a full-screen
-                    preview for each of the attachment similar to tools like
-                    Slack or Jira
+                    UX. ( for example List get updated instantly no need to
+                    refresh the page )
                   </li>
                 </ul>
               </div>

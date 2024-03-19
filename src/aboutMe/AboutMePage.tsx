@@ -28,13 +28,18 @@ export const AboutMePage = () => {
           element={
             <Border className="summaryBorder">
               <p className="summaryAboutMe">
-                I am currently working for Vectice as a Front-End Web Engineer
-                in San Francisco. I am contributing to the web application
-                development with Typescript and React for a SaaS solution
-                managing Data-Science Teams. I constantly delivered each feature
-                on time and according to the design for each sprint:
+                I'm a passionate Front-End Web Developer currently based in
+                France. I am contributing to the web application development
+                with Typescript and React for a SaaS solution managing
+                Data-Science Teams. I constantly delivered each feature on time
+                and according to the design for each sprint:
                 <br />
                 <ul>
+                  <li>
+                    Integrated an LLM-Prompt feature to automatically generate
+                    documentation from user projects, eliminating white page
+                    frustrations.
+                  </li>
                   <li>
                     Created custom components from HTML components, leveraging
                     React and custom hooks to manage the logical state of the
@@ -45,6 +50,15 @@ export const AboutMePage = () => {
                     graphs that matched the design requirements for the web
                     application. The library was created using the low level
                     graphic library Visx.
+                  </li>
+                  <li>
+                    Championed UX principles by participating in discussions to
+                    simplify user experience and reduce cognitive load.
+                  </li>
+                  <li>
+                    Developed Google-like comments with mentions, editing,
+                    highlighted text management, and status tracking
+                    (Resolved/Unresolved) using Lexical library.
                   </li>
                   <li>
                     Increased overall test coverage from 40% to 80% using Unit
@@ -82,7 +96,8 @@ export const AboutMePage = () => {
                 engineers, customers and field teams. The communication had to
                 be tailored between each team to collect their needs. In the US,
                 I switched to a startup mindset, wearing multiple hats and
-                learning the latest tech best practises.
+                learning the latest tech best practises. I learned a lot working
+                in the Silicon Valley.
                 <br />
               </p>
             </Border>
